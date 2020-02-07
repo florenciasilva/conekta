@@ -6,28 +6,20 @@ const Navbar = () => {
     return (
         <div style={{display: "flex", justifyContent: "space-between", flexDirection: 'row'}}>
             <Sidenav />
-        <Nav>
-            <Container>
-                    <Image src="https://dummyimage.com/50x50/000/fff" alt="Black dummy image with no relevant content"/>
-                    <Wrapper>
-                        <Label>user name</Label>
-                        <User>Whoever Whatever</User>
-                    </Wrapper>
-            </Container>
-        </Nav>
+            <Nav className="nav">
+                <Container>
+                        <Image src="https://dummyimage.com/50x50/000/fff" alt="Black dummy image with no relevant content"/>
+                        <Wrapper>
+                            <Label>user name</Label>
+                            <User>Whoever Whatever</User>
+                        </Wrapper>
+                </Container>
+            </Nav>
         </div>
     );
 };
 
 const Nav = styled.nav`
-    width: 80vw;
-    background-color: transparent;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 15vh;
-    margin: 0;
-    padding: 0;
 
     @media only screen and (min-width: 1025px) {
         width: 80%;
