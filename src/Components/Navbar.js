@@ -1,11 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import Sidenav from './Sidenav';
 
 const Navbar = () => {
     return (
-        <div style={{display: "flex", justifyContent: "space-between", flexDirection: 'row'}}>
-            <Sidenav />
+        <>
             <Nav className="nav">
                 <Container>
                         <Image src="https://dummyimage.com/50x50/000/fff" alt="Black dummy image with no relevant content"/>
@@ -15,14 +13,14 @@ const Navbar = () => {
                         </Wrapper>
                 </Container>
             </Nav>
-        </div>
+            </>
     );
 };
 
 const Nav = styled.nav`
 
     @media only screen and (min-width: 1025px) {
-        width: 80%;
+        width: 70vw;
     }
 `
 
