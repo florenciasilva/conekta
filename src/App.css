@@ -38,3 +38,51 @@ body {
     margin: 0;
     padding: 0;
 }
+
+.bold {
+    font-weight: bolder;
+    padding: .5em;
+}
+
+.declined {
+    background-color: #F8D7D5;
+    color: #D06265;
+    border-radius: 25px;
+}
+
+.refunded {
+    background-color: #D4E8FB;
+    color: #598CB9;
+    border-radius: 25px;
+}
+
+.partially_refunded {
+    background-color: paleturquoise;
+    border-radius: 25px;
+}
+
+.paid {
+    background-color: #d2f8d2;
+    color: #9ec69e;
+    border-radius: 25px;
+}
+
+.no_charge{
+    background-color: #E2E2E2;
+    color: #848484;
+    border-radius: 25px;
+}
+
+td {
+    text-align: center;
+}
+
+th {
+    padding: 1em;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+

@@ -7,7 +7,7 @@ const Payments = () => {
     return (
         <Main>
             <Title>Payments</Title>
-            <Section>
+            <Section tabIndex="0">
                 <div>
                     <PaymentsTable data={records} />
                 </div>
@@ -39,6 +39,7 @@ const Section = styled.section`
     width: 95%;
     max-height: 60vh;
     overflow-y: scroll;
+    
 `
 
 export default Payments;

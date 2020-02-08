@@ -73,6 +73,7 @@ const Side = styled.div`
     }
     @media only screen and (min-width: 1025px) {
         display: flex;
+        width: 20vw
     }
 `
 
