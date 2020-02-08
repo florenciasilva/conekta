@@ -20,9 +20,13 @@ const Main = styled.main`
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    width: 95vw;
     flex-direction: column;
     margin-left: 1em;
+
+    @media only screen and (min-width: 1025px) {
+        width: auto;
+    }
 `
 
 const Title = styled.h1`

@@ -1,11 +1,18 @@
-body, #root {
+body {
+    padding: 0;
+    margin: 0; 
+    background-color: #e4f2f5;
+
+}
+
+#root {
     padding: 0;
     margin: 0;
     background-color: #e4f2f5;
     font-family: 'Raleway', sans-serif;
     display: flex;
     flex-wrap: wrap;
-    width: 100vw;
+    height: 100vh;
 }
 
 

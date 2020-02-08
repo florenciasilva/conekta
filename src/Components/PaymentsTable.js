@@ -32,13 +32,13 @@ const PaymentsTable = (props) => {
 
     return (
         <Table>
-            <thead>
+            <Title>
                 <th>Date</th>                
                 <th>Payment Status</th>                
                 <th>Payment Type</th>                
                 <th>Customer</th>                
                 <th>Amount</th>            
-            </thead>
+            </Title>
             <tbody>
                 {dataMap}
             </tbody>
@@ -49,8 +49,13 @@ const PaymentsTable = (props) => {
 
 const Table = styled.table`
     max-height: 30vh;
+    width: 100%;
     margin: 0;
     padding: 0;
+`
+
+const Title = styled.thead`
+    text-align: center;
 `
 
 export default PaymentsTable;
