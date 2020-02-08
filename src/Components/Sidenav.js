@@ -10,11 +10,7 @@ const Sidenav = () => {
     const showSidenav = () => {
         setSidenav('visible');
         setButton('fas fa-minus');
-        if(document.querySelector('.nav')) {
-            document.querySelector('.nav').className = 'openSidenav'
-        } else {
-            document.querySelector('.openSidenav').className = 'nav'
-        }
+        
         if(button === 'fas fa-minus') {
             setButton('fas fa-bars');
             setSidenav('hidden');
@@ -22,7 +18,6 @@ const Sidenav = () => {
     }
     return (
         <>
-
             <Button onClick={showSidenav}> <i className={button}></i> </Button>
             <Container className={sidenav}>
                 <Side className={sidenav}>
@@ -36,8 +31,12 @@ const Sidenav = () => {
 };
 
 const Container = styled.div`
+    float: left;
+    position: absolute;
     @media only screen and (min-width: 1025px) {
         display: flex;
+        float: none;
+        position: unset;
     }
 `
 
