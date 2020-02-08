@@ -5,22 +5,22 @@ const Accordion = () => {
     return (
         <Container>
             <Details>
-                <Summary><i class="fas fa-border-all"></i>General</Summary>
+                <Summary><i className="fas fa-border-all"></i>General</Summary>
             According to 2010 Census Bureau estimates, New Orleans' population is made up of approximately 343,829 residents.
             </Details>
 
             <Details>
-                <Summary><i class="fas fa-exchange-alt"></i>Transactions</Summary>
+                <Summary><i className="fas fa-exchange-alt"></i>Transactions</Summary>
             A po' boy (also po-boy, po boy) is a traditional sandwich from Louisiana. It almost always consists of meat, which is usually roast beef or fried seafood, often shrimp, crawfish, fish, oysters or crab.
             </Details>
 
             <Details>
-                <Summary><i class="fas fa-money-bill"></i>Accounting</Summary>
+                <Summary><i className="fas fa-money-bill"></i>Accounting</Summary>
             Use Google Maps.
             </Details>
 
             <Details>
-                <Summary><i class="fas fa-code"></i>Developers</Summary>
+                <Summary><i className="fas fa-code"></i>Developers</Summary>
             Use Google Maps.
             </Details>
         </Container>

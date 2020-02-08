@@ -1,13 +1,40 @@
 import React from 'react';
 import styled from 'styled-components';
+import PaymentStatus from '../Components/PaymentStatus';
+import ClientCard from '../Components/ClientCard';
+import { withRouter } from 'react-router-dom';
+import breakdown from '../breakdown.json';
 
 const PaymentDetail = (props) => {
-    console.log(props)
-    return (
+    console.log(props.location.state.record)
+    if(props.location.state === undefined) {
+        props.history.push('/');
+        return (
+            <p> :c </p>
+        )
+    } if(props.location.state.record.id === breakdown.data.payment.id) {
+        return (
         <Main>
-            <Title>Payment Details</Title>
-        </Main>
-    );
+                <Title>Payment Details</Title>
+                <Container>
+                    <PaymentStatus data={breakdown.data.payment}/>
+                    <ClientCard data={breakdown.data.payment} />
+                </Container>
+            </Main>
+        )
+    } else {
+        return (
+            <Main>
+                <Title>Payment Details</Title>
+                <Container>
+                    <PaymentStatus data={props.location.state.record}/>
+                    <ClientCard data={props.location.state.record} />
+
+                </Container>
+
+            </Main>
+        );
+    }
 };
 
 const Main = styled.main`
@@ -23,10 +50,15 @@ const Main = styled.main`
     }
 `
 
+const Container = styled.div`
+    display: flex;
+    width: 100%;
+`
+
 const Title = styled.h1`
     align-self: flex-start;
     padding: 1em;
 `
 
 
-export default PaymentDetail;
+export default withRouter(PaymentDetail);
