@@ -60,7 +60,7 @@ const Logo = styled.img`
 
 const Side = styled.div`
     height: 100vh;
-    width: 25vw;
+    width: 50vw;
     display: flex;
     background-color: white;
     flex-direction: column;
@@ -68,6 +68,9 @@ const Side = styled.div`
     margin: 0;
     padding: 1em;
 
+    @media only screen and (min-width: 735px) {
+        width: 25vw;
+    }
     @media only screen and (min-width: 1025px) {
         display: flex;
     }
