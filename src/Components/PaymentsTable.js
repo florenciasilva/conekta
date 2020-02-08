@@ -33,16 +33,23 @@ const PaymentsTable = (props) => {
         if(record.failure) {
             formattedFailure = formattedFailure.replace('_', ' ');
         }
-        
+
+        const getDate = new Date(record.created);
+        const formatDate = new Intl.DateTimeFormat("en-GB", {
+            year: "numeric",
+            month: "long",
+            day: "2-digit"
+          }).format(getDate)
+
         return (
             <tr key={i}>
                 <td>
-                    <button onClick={handleRedirect}>
+                    <Button onClick={handleRedirect} aria-label="See more details">
                         {renderRedirect(record)}
-                        <i class="far fa-eye"></i>
-                    </button>
+                        <i className="far fa-eye"></i>
+                    </Button>
                 </td>
-                <td>date</td>
+                <td>{formatDate}</td>
                 <td>
                     <p>
                         <span className={record.status + " bold"}>{formattedStatus}</span>
@@ -111,5 +118,11 @@ const Failure = styled.p`
     font-size: .9em;
     letter-spacing: .1em;
 `
+
+const Button = styled.button`
+    background: transparent;
+    border: none;
+`
+
 
 export default PaymentsTable;
