@@ -1,24 +1,20 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { Redirect } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
 const PaymentsTable = (props) => {
     const [ redirect, setRedirect ] = useState(false)
 
-    const handleRedirect = () => {
-        setRedirect(!false)
+    const handleRedirect = (record) => {
+        console.log(record, '<= handleRedirect record')
+        setRedirect(!redirect)
+        props.history.push({
+            pathname: '/detail',
+            state: { record }
+          })
     }
 
-    const renderRedirect = (record) => {
-        if(redirect) {
-            return (
-                <Redirect to={{
-                    pathname: '/detail',
-                    state: { record }
-                }} />
-            )
-        }
-    }
+    
 
     const dataMap = props.data.data.payments.map((record, i) => {
         const amount = record.amount.toString();
@@ -44,8 +40,7 @@ const PaymentsTable = (props) => {
         return (
             <tr key={i}>
                 <td>
-                    <Button onClick={handleRedirect} aria-label="See more details">
-                        {renderRedirect(record)}
+                    <Button onClick={() => handleRedirect(record)} aria-label="See more details">
                         <i className="far fa-eye"></i>
                     </Button>
                 </td>
@@ -72,7 +67,7 @@ const PaymentsTable = (props) => {
             </tr>
         );
     });
-
+    
     return (
         <Table>
             <Title>
@@ -81,7 +76,7 @@ const PaymentsTable = (props) => {
                 <th>Payment Status</th>                
                 <th>Payment Type</th>                
                 <th>Customer</th>                
-                <th>Amount</th>            
+                <th>Amount</th>     
             </Title>
             <tbody>
                 {dataMap}
@@ -125,4 +120,4 @@ const Button = styled.button`
 `
 
 
-export default PaymentsTable;
+export default withRouter(PaymentsTable);
