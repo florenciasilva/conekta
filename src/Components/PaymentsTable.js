@@ -6,7 +6,6 @@ const PaymentsTable = (props) => {
     const [ redirect, setRedirect ] = useState(false)
 
     const handleRedirect = (record) => {
-        console.log(record, '<= handleRedirect record')
         setRedirect(!redirect)
         props.history.push({
             pathname: '/detail',

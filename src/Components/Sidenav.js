@@ -18,7 +18,7 @@ const Sidenav = () => {
     }
     return (
         <>
-            <Button onClick={showSidenav}> <i className={button}></i> </Button>
+            <Button onClick={showSidenav} aria-label="Sidenav menu"> <i className={button}></i> </Button>
             <Container className={sidenav}>
                 <Side className={sidenav}>
                     <Logo src="https://dummyimage.com/200x40/000/fff" alt="Black dummy image with no relevant content" />
