@@ -14,6 +14,9 @@ const ClientCard = (props) => {
                     
                     <SecondaryTitle> <i className="far fa-envelope"></i> Email </SecondaryTitle>
                     <CardText>{info.email}</CardText>
+
+                    <SecondaryTitle> <i className="fas fa-phone-alt"></i> Phone Number </SecondaryTitle>
+                    <CardText style={{display: info.phone ? 'flex' : 'none'}}>{info.phone}</CardText>
                     </Section>
             </CardContainer>
     )
@@ -27,11 +30,14 @@ const CardContainer = styled.div`
     display: flex;
     align-items: center;
     flex-direction: column;
-    width: 20%;
+    width: 100%;
     background-color: white;
     box-shadow: 3px 3px 12px -5px #f7fcfc;
     margin: .4em;
     border-radius: 5px;
+    @media only screen and (min-width: 1025px) {
+        width: 20%;
+    }
 `
 
 const CardTitle = styled.h2`
@@ -54,44 +60,6 @@ const CardText = styled.p`
 
 `
 
-
-const Amount = styled.p`
-    font-size: 2em;
-    margin-top: -.5em;
-    font-weight: bolder;
-
-`
-
-const SpacedSection = styled.section`
-    display: flex;
-    justify-content: space-between;
-    width: 90%;
-`
-
-const StatusSection = styled.section`
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    width: 90%;
-
-`
-
-const AnchorArticle = styled.article`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    
-    
-    & a {
-        color: gray;
-        text-decoration: none;
-    }
-
-    & a:first-child {
-        font-weight: bolder;
-        color: black;
-    }
-`
 
 
 export default ClientCard;

@@ -55,11 +55,15 @@ const CardContainer = styled.div`
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 40%;
+    width: 100%;
     background-color: white;
     box-shadow: 3px 3px 12px -5px #f7fcfc;
     margin: .4em;
     border-radius: 5px;
+
+    @media only screen and (min-width: 1025px) {
+        width: 40%;
+    }
 `
 
 const CardTitle = styled.h2`

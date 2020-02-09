@@ -1,25 +1,58 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import PaymentStatus from '../Components/PaymentStatus';
 import ClientCard from '../Components/ClientCard';
+import PaymentMethodCard from '../Components/PaymentMethodCard';
+import PaymentAttempts from '../Components/PaymentAttempts';
 import { withRouter } from 'react-router-dom';
 import breakdown from '../breakdown.json';
+import Breakdown from '../Components/Breakdown';
 
 const PaymentDetail = (props) => {
-    console.log(props.location.state.record)
-    if(props.location.state === undefined) {
+    const [ currentRender, setRender ] = useState(1);
+
+    const handleBreakdown = () => {
+        setRender(-1);
+    };
+
+    const handleData = () => {
+        setRender(1);
+    };
+
+
+    const renderScreen = () => {
+        if(currentRender === 1) {
+            return (
+                <>
+                    <Container>
+                        <PaymentStatus data={breakdown.data.payment}/>
+                        <ClientCard data={breakdown.data.payment} />
+                        <PaymentMethodCard data={breakdown.data.payment} />
+                    </Container>
+                    <PaymentAttempts data={breakdown.data.payment} />
+                </>
+            );
+        } else {
+            return (
+                <Breakdown data={breakdown.data.payment}/>
+            );
+        }
+    };
+
+    if(props.location.state === undefined || props.location.state === '') {
         props.history.push('/');
         return (
             <p> :c </p>
         )
-    } if(props.location.state.record.id === breakdown.data.payment.id) {
+    } if (props.location.state.record.id === breakdown.data.payment.id) {
         return (
         <Main>
                 <Title>Payment Details</Title>
-                <Container>
-                    <PaymentStatus data={breakdown.data.payment}/>
-                    <ClientCard data={breakdown.data.payment} />
-                </Container>
+                    <Container>
+                        <button onClick={handleData}>Data</button>
+                        <button onClick={handleBreakdown}>Breakdown</button>
+                    </Container>
+                    {renderScreen()}
             </Main>
         )
     } else {
@@ -29,9 +62,8 @@ const PaymentDetail = (props) => {
                 <Container>
                     <PaymentStatus data={props.location.state.record}/>
                     <ClientCard data={props.location.state.record} />
-
+                    <PaymentMethodCard data={props.location.state.record} />
                 </Container>
-
             </Main>
         );
     }
@@ -53,6 +85,7 @@ const Main = styled.main`
 const Container = styled.div`
     display: flex;
     width: 100%;
+    flex-wrap: wrap;
 `
 
 const Title = styled.h1`
