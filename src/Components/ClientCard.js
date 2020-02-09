@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 
 const ClientCard = (props) => {
-    console.log(props)
     const info = props.data.customer;
     return (
         <CardContainer>
@@ -59,7 +58,5 @@ const CardText = styled.p`
     margin-top: -1em;
 
 `
-
-
 
 export default ClientCard;

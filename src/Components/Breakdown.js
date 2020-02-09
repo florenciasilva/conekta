@@ -71,6 +71,7 @@ const Section = styled.section`
     margin: .4em;
     align-self: flex-start;    
 `
+
 const Table = styled.table`
     max-height: 30vh;
     width: 100%;
@@ -83,6 +84,5 @@ const Table = styled.table`
 const Title = styled.thead`
     text-align: center;
 `
-
 
 export default Breakdown;

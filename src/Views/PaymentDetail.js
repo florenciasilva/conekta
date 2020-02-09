@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import { withRouter } from 'react-router-dom';
+
+import breakdown from '../breakdown.json';
+
 import PaymentStatus from '../Components/PaymentStatus';
 import ClientCard from '../Components/ClientCard';
 import PaymentMethodCard from '../Components/PaymentMethodCard';
 import PaymentAttempts from '../Components/PaymentAttempts';
-import { withRouter } from 'react-router-dom';
-import breakdown from '../breakdown.json';
 import Breakdown from '../Components/Breakdown';
 
 const PaymentDetail = (props) => {
@@ -49,9 +51,10 @@ const PaymentDetail = (props) => {
         <Main>
                 <Title>Payment Details</Title>
                     <Container>
-                        <button onClick={handleData}>Data</button>
-                        <button onClick={handleBreakdown}>Breakdown</button>
+                        <Button onClick={handleData} className={currentRender === 1 ? 'active' : ''}>Data</Button>
+                        <Button onClick={handleBreakdown} className={currentRender === -1 ? 'active' : ''}>Breakdown</Button>
                     </Container>
+                    <hr />
                     {renderScreen()}
             </Main>
         )
@@ -91,6 +94,13 @@ const Container = styled.div`
 const Title = styled.h1`
     align-self: flex-start;
     padding: 1em;
+`
+
+const Button = styled.button`
+    background: transparent;
+    border: none;
+    margin: .4em;
+    font-weight: bold;
 `
 
 

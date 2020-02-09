@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import PaymentsTable from '../Components/PaymentsTable';
+
 import records from '../records.json';
+
+import PaymentsTable from '../Components/PaymentsTable';
 
 const Payments = () => {    
     return (
@@ -32,6 +34,7 @@ const Main = styled.main`
 const Title = styled.h1`
     align-self: flex-start;
     padding: 1em;
+    margin-bottom: 0;
 `
 
 const Section = styled.section`

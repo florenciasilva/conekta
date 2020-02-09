@@ -4,25 +4,25 @@ import styled from 'styled-components';
 const PaymentAttempts = (props) => {
     const record = props.data;
 
-        const amount = record.amount.toString();
-        
-        const lastTwoDigits = amount.substr(-2);
-        const firstDigits = amount.slice(0, -2);
-        const formattedAmount = firstDigits + '.' + lastTwoDigits;
-        
-        const formattedStatus = record.status.replace('_', ' ');
-        
-        let formattedFailure = record.failure
-        if(record.failure) {
-            formattedFailure = formattedFailure.replace('_', ' ');
-        }
+    const amount = record.amount.toString();
+    
+    const lastTwoDigits = amount.substr(-2);
+    const firstDigits = amount.slice(0, -2);
+    const formattedAmount = firstDigits + '.' + lastTwoDigits;
+    
+    const formattedStatus = record.status.replace('_', ' ');
+    
+    let formattedFailure = record.failure
+    if(record.failure) {
+        formattedFailure = formattedFailure.replace('_', ' ');
+    }
 
-        const getDate = new Date(record.created);
-        const formatDate = new Intl.DateTimeFormat("en-GB", {
-            year: "numeric",
-            month: "long",
-            day: "2-digit"
-          }).format(getDate)
+    const getDate = new Date(record.created);
+    const formatDate = new Intl.DateTimeFormat("en-GB", {
+        year: "numeric",
+        month: "long",
+        day: "2-digit"
+        }).format(getDate)
 
 
     return (

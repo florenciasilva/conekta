@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 
 const PaymentStatus = (props) => {
-    console.log(props)
     const detail = props.data;
     const lastTwoDigits = detail.amount.toString().substr(-2);
     const firstDigits = detail.amount.toString().slice(0, -2);

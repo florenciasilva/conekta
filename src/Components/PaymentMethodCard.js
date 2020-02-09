@@ -45,7 +45,6 @@ const CardInfo = styled.p`
     @media only screen and (min-width: 1025px) {
         margin-bottom: -1em;
     }
-    
 `
 const CardDetails = styled(CardInfo)`
     font-size: .9em;
@@ -70,7 +69,6 @@ const CreditCard = styled.article`
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    
 `
 
 const Icon = styled.i`
@@ -106,7 +104,5 @@ const SpacedSection = styled.section`
     justify-content: space-between;
     width: 90%;
 `
-
-
 
 export default PaymentMethodCard;

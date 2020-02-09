@@ -87,6 +87,9 @@ tr:nth-child(even) {
 
 hr {
     width: 90%;
-    margin-top:-1em;
     filter: opacity(20%);
+}
+
+.active {
+    border-bottom: 1px solid black!important;
 }
