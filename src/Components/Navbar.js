@@ -9,7 +9,7 @@ const Navbar = () => {
                         <Image src="https://dummyimage.com/50x50/000/fff" alt="Black dummy image with no relevant content"/>
                         <Wrapper>
                             <Label>user name</Label>
-                            <User>Whoever Whatever</User>
+                            <User>Mrs. No Name</User>
                         </Wrapper>
                 </Container>
             </Nav>
@@ -18,9 +18,9 @@ const Navbar = () => {
 };
 
 const Nav = styled.nav`
-
+    width: 100%;
     @media only screen and (min-width: 1025px) {
-        width: 70vw;
+        width: 75vw;
     }
 `
 
@@ -34,6 +34,7 @@ const Container = styled.div`
 
 const Image = styled.img`
     border-radius: 50%;
+    margin: .2em;
 `
 
 const Wrapper = styled.div`
@@ -51,6 +52,8 @@ const Label = styled.p`
 
 const User = styled.p`
     letter-spacing: .1em;
+    font-weight: bold;
+    margin-top: -.7em;
 `
 
 export default Navbar;

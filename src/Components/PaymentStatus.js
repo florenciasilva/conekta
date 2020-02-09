@@ -61,7 +61,7 @@ const CardContainer = styled.div`
     border-radius: 5px;
 
     @media only screen and (min-width: 1025px) {
-        width: 40%;
+        width: 52%;
     }
 `
 

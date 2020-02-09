@@ -15,7 +15,6 @@ body {
     height: 100vh;
 }
 
-
 .hidden {
     display: none;
 }
@@ -86,10 +85,10 @@ tr:nth-child(even) {
 }
 
 hr {
-    width: 90%;
+    width: 99%;
     filter: opacity(20%);
 }
 
 .active {
-    border-bottom: 1px solid black!important;
+    border-bottom: 1.5px solid black!important;
 }

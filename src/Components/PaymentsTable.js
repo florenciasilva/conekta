@@ -40,7 +40,7 @@ const PaymentsTable = (props) => {
         return (
             <tr key={i}>
                 <td>
-                    <Button onClick={() => handleRedirect(record)} aria-label="See more details">
+                    <Button onClick={() => handleRedirect(record)} aria-label="Click to see more details">
                         <i className="far fa-eye"></i>
                     </Button>
                 </td>
@@ -117,6 +117,11 @@ const Failure = styled.p`
 const Button = styled.button`
     background: transparent;
     border: none;
+    cursor: pointer;
+
+    &:hover {
+        color: #33BCB4;
+    }
 `
 
 

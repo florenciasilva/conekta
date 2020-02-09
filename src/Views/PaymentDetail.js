@@ -76,7 +76,7 @@ const Main = styled.main`
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 95vw;
+    width: 100%;
     flex-direction: column;
     margin-left: 1em;
 
@@ -101,6 +101,11 @@ const Button = styled.button`
     border: none;
     margin: .4em;
     font-weight: bold;
+    font-size: 1.2em;
+
+    :hover {
+        color: #33BCB4;
+    }
 `
 
 

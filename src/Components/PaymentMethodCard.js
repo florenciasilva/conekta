@@ -38,6 +38,42 @@ const PaymentMethodCard = (props) => {
     };
 };
 
+
+const CardContainer = styled.div`
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    background-color: white;
+    box-shadow: 3px 3px 12px -5px #f7fcfc;
+    margin: .4em;
+    border-radius: 5px;
+    @media only screen and (min-width: 1025px) {
+        width: 25%;
+    }
+`
+
+const CardTitle = styled.h2`
+    align-self: flex-start;
+    margin-left: .5em;
+    text-transform: uppercase;
+    font-weight: 900;
+    letter-spacing: .05em;
+    font-size: 1.2em;
+`
+
+const SpacedSection = styled.section`
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+`
+
+const Icon = styled.i`
+    font-size: 1.5em;
+    margin-left: .4em;
+`
+
+
 const CardInfo = styled.p`
     color: white;
     font-size: 1.2em;
@@ -69,40 +105,6 @@ const CreditCard = styled.article`
     justify-content: center;
     align-items: center;
     flex-direction: column;
-`
-
-const Icon = styled.i`
-    font-size: 1.5em;
-    margin-left: .4em;
-`
-
-const CardContainer = styled.div`
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    width: 100%;
-    background-color: white;
-    box-shadow: 3px 3px 12px -5px #f7fcfc;
-    margin: .4em;
-    border-radius: 5px;
-    @media only screen and (min-width: 1025px) {
-        width: 20%;
-    }
-`
-
-const CardTitle = styled.h2`
-    align-self: flex-start;
-    margin-left: .5em;
-    text-transform: uppercase;
-    font-weight: 900;
-    letter-spacing: .05em;
-    font-size: 1.2em;
-`
-
-const SpacedSection = styled.section`
-    display: flex;
-    justify-content: space-between;
-    width: 90%;
 `
 
 export default PaymentMethodCard;
