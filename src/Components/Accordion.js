@@ -6,22 +6,32 @@ const Accordion = () => {
         <Container>
             <Details>
                 <Summary><i className="fas fa-border-all"></i>General</Summary>
-            According to 2010 Census Bureau estimates, New Orleans' population is made up of approximately 343,829 residents.
+                <a href="#">Payments</a>
+                <a href="#">Transfer</a>
+                <a href="#">Chargebacks</a>
+
             </Details>
 
             <Details>
                 <Summary><i className="fas fa-exchange-alt"></i>Transactions</Summary>
-            A po' boy (also po-boy, po boy) is a traditional sandwich from Louisiana. It almost always consists of meat, which is usually roast beef or fried seafood, often shrimp, crawfish, fish, oysters or crab.
+                <a href="#">Payments</a>
+                <a href="#">Transfer</a>
+                <a href="#">Chargebacks</a>
             </Details>
 
             <Details>
                 <Summary><i className="fas fa-money-bill"></i>Accounting</Summary>
-            Use Google Maps.
+                <a href="#">Payments</a>
+                <a href="#">Transfer</a>
+                <a href="#">Chargebacks</a>
             </Details>
 
             <Details>
                 <Summary><i className="fas fa-code"></i>Developers</Summary>
-            Use Google Maps.
+                <p>Made with ♥ by Florencia Silva</p>
+                <a target="_blank" href="https://github.com/florenciasilva" rel="noopener noreferrer">Github</a>
+                <a target="_blank" href="https://www.linkedin.com/in/florenciasilvaolivera/" rel="noopener noreferrer">Linkedin</a>
+                <a target="_blank" href="http://florenciasilva.github.io/" rel="noopener noreferrer">Portfolio</a>
             </Details>
         </Container>
     );
@@ -34,11 +44,27 @@ const Container = styled.section`
 `
 
 const Details = styled.details`
-    margin: 1.5em 0 1.5em 0;
+    margin: 1em 0 1em 0;
     @media only screen and (min-width: 1025px) {
         width: 13vw;
-        margin: 2em 0 2em 0;
+        margin: 1.5em 0 1.5em 0;
     }
+
+    & a {
+        display: block;
+        text-decoration: none;
+        font-size: 1.2em;
+        font-weight: bold;
+        color: black;
+        padding: .7em;
+        text-align: center;
+    }
+
+    & a:hover {
+        background-color: #EAF7F9;
+        color: #33BCB4;
+    }
+
 `
 
 const Summary = styled.summary`
@@ -53,6 +79,12 @@ const Summary = styled.summary`
         margin-left: .5em;
 
     }
+
+    & :hover {
+        background-color: #EAF7F9;
+        color: #33BCB4;
+    }
+
 
     & i {
         margin: .3em
